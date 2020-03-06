@@ -1,18 +1,18 @@
 <template>
-  <div id="app">
-    <Loading />
+  <div id="App">
+    <button @click="showToast">test global component</button>
   </div>
 </template>
 
 <script>
-import Loading from "./components/Loading";
-
 export default {
   name: "App",
-  components: {
-    Loading
+  created() {},
+  methods: {
+    showToast() {
+      console.log(this.$toast('hahhaha'),999);
+    }
   },
-  created() {}
 };
 </script>
 
