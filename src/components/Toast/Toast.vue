@@ -10,7 +10,13 @@ export default {
       isShow: false
     };
   },
+  methods: {
+    test() {
+      console.log(66666);
+    }
+  },
   mounted() {
+    console.log(this,'this');
     setTimeout(() => {
       this.isShow = false;
     }, 3000);

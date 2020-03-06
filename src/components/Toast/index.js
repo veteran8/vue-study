@@ -1,17 +1,16 @@
 import ToastComponent from "./Toast.vue";
-import Vue from "vue";
 
-const Toast = message => {
+const Toast = {};
+Toast.install = function(Vue) {
   const ToastConstructor = Vue.extend(ToastComponent);
-  const ToastInstance = new ToastConstructor({
-    el: document.createElement("div"),
-    data() {
-      return {
-        isShow: true,
-        message
-      };
-    }
-  });
+  const ToastInstance = new ToastConstructor();
+  ToastInstance.$mount(document.createElement("div"));
   document.body.appendChild(ToastInstance.$el);
+  Vue.prototype.$toast = message => {
+    console.log(message);
+    ToastInstance.isShow = true
+    ToastInstance.message = message;
+  };
 };
-export default Toast
+
+export default Toast;

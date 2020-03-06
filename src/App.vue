@@ -10,7 +10,7 @@ export default {
   created() {},
   methods: {
     showToast() {
-      console.log(this.$toast('hahhaha'),999);
+      this.$toast('hhhhh')
     }
   },
 };
